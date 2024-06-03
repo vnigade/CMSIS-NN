@@ -47,7 +47,7 @@ extern "C" {
 
 // CMSIS-NN uses the same macro names as CMSIS-DSP
 #if (defined(__ARM_FEATURE_DSP) && (__ARM_FEATURE_DSP == 1))
-    #ifndef ARM_MATH_DSP
+    #if !defined(ARM_MATH_DSP) && !defined(DISABLE_CMSIS_NN_DSP)
         #define ARM_MATH_DSP 1
     #endif
 #endif
